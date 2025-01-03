@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  libreoffice-impress:
+    build: .
+    container_name: libreoffice_impress
+    ports:
+      - "5901:5901"  # VNC port
+    volumes:
+      - ./data:/home/dockeruser/data  # Persistent storage for presentations
+    restart: unless-stopped
